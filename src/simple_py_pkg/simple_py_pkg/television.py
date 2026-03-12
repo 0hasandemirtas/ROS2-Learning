@@ -7,7 +7,7 @@ from example_interfaces.msg import String
 class ChannelNode(Node):#1
     def __init__(self):
         super().__init__('channel_node')#2
-
+        self.declare_parameter('greeting', 'Hİ!')
         self.greeting_ = "Hİ!"
         self.publishers_ = self.create_publisher(String, 'channel_something', 10)
         self.timer_ = self.create_timer(0.5, self.publish_channel)
